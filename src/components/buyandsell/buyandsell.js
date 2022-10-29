@@ -28,7 +28,7 @@ const BuyAndSell = () => {
     return (
         <div className='bs-container'>
             <div className='bs-btn-container'>
-                <button id='buy' onClick={orderBuy}>BUY</button>
+                <button id='buy' className='buy-button-after-click' onClick={orderBuy}>BUY</button>
                 <button id='sell' onClick={orderSell}>SELL</button>
             </div>
             <div id='buy-container' style={{ display: "block" }}>

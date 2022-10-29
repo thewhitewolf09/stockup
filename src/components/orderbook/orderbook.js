@@ -6,7 +6,7 @@ const CurrentMarket = ()=>{
     return (
         <div className='current-market-container'>
         <div className='current-market-heading'>
-            <span style={{textAlign:"center"}}><AiFillCaretDown/> ORDER BOOK</span>
+            <span style={{textAlign:"center",color:"#2146C7",fontWeight:"bold"}}><AiFillCaretDown/> ORDER BOOK</span>
              <div>
                 <span>Volume</span>
                 <span>Buy Price</span>
