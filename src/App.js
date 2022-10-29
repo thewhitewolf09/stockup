@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-
+import CurrentMarket from "./components/orderbook/orderbook";
+import Graph from "./components/graph/graph";
+import Header from "./components/header/header";
+import "./app.css"
+import UserPortfolio from "./components/userportfolio/userportfolio";
+import TradeHistory from "./components/tradehistory/tradehistory";
+import BuyAndSell from "./components/buyandsell/buyandsell";
+import Footer from "./components/footer/footer";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Header />
+      <div>
+        <div className="cmg-container">
+          <Graph />
+          <CurrentMarket />
+        </div>
+        <div className="upthbs-container">
+          <UserPortfolio />
+          <TradeHistory />
+          <BuyAndSell/>
+        </div>
+      </div>
+      <Footer/>
     </div>
   );
 }

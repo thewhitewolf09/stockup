@@ -1,0 +1,33 @@
+.bs-container{
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    background-color: white;
+    border: 1px solid #E6CBA8;
+    margin: 5px;
+    border-radius: 5px;
+}
+.bs-btn-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.bs-btn-container button{
+    cursor: pointer;
+    height: 45px;
+    width: 50%;
+    border: 1px solid #e2e2e2;
+    background-color: transparent;
+    font-weight: bold;
+}
+
+.buy-button-after-click{
+    border-top: 4px solid green !important;
+    border-bottom: none !important;
+}
+
+.sell-button-after-click{
+    border-top: 4px solid red !important;
+    border-bottom: none !important;
+}
