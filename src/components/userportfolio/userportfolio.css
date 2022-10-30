@@ -4,6 +4,7 @@
     margin: 5px;
     border-radius: 5px;
     background-color: white;
+    height: 73vh;
 }
 .user-portfolio-heading{
     display: flex;
@@ -21,17 +22,21 @@
     font-size: 14px;
 }
 
+
 .userportfolio-user-container{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-left: 20px;
     padding-right: 20px;
+    
 }
 
 .userportfolio-user-container span{
     font-size: 16px;
     font-weight: bold;
+    text-align: center;
+    width: 33%;
 }
 
 .userportfolio-user-container input{

@@ -3,23 +3,6 @@ import "./orderbook.css"
 import { AiFillCaretDown } from "react-icons/ai"
 
 
-
-
-
-// let buyList = [];
-// let sellList = [];
-
-// orderbookList.map((item) => {
-//     if (item.order_type === 0) {
-//         buyList.push(item);
-//     } else {
-//         sellList.push(item);
-//     }
-// });
-
-// console.log(buyList)
-// console.log(sellList)
-
 const BuyOrder = (props) => {
     const { eachItem } = props;
     return (
@@ -52,8 +35,6 @@ const CurrentMarket = () => {
         setOrderbuy(res_data.order_buy);
     }
 
-    // console.log(ordersell)
-    // console.log(orderbuy)
     useEffect(() => {
         getOrderBook();
     })

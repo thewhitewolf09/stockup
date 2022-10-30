@@ -1,100 +1,44 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import "./tradehistory.css"
 import { AiFillCaretDown } from "react-icons/ai"
-import {MdOutlineArrowUpward,MdOutlineArrowDownward} from "react-icons/md"
-const tradehistoryList = [
-    {
-        order_type: 0,
-        volume: "1",
-        price: "12",
-        time: "8:12:36"
-    },
-    {
-        order_type: 1,
-        volume: "4",
-        price: "26",
-        time: "8:12:36"
-    },
-    {
-        order_type: 0,
-        volume: "1",
-        price: "20",
-        time: "8:12:36"
-    },
-    {
-        order_type: 0,
-        volume: "1",
-        price: "18",
-        time: "8:12:36"
-    },
-    {
-        order_type: 1,
-        volume: "1",
-        price: "31",
-        time: "8:12:36"
-    },
-    {
-        order_type: 1,
-        volume: "1",
-        price: "20",
-        time: "8:12:36"
-    },
-    {
-        order_type: 0,
-        volume: "1",
-        price: "12",
-        time: "8:12:36"
-    },
-    {
-        order_type: 1,
-        volume: "4",
-        price: "26",
-        time: "8:12:36"
-    },
-    {
-        order_type: 0,
-        volume: "1",
-        price: "20",
-        time: "8:12:36"
-    },
-    {
-        order_type: 0,
-        volume: "1",
-        price: "18",
-        time: "8:12:36"
-    },
-    {
-        order_type: 1,
-        volume: "1",
-        price: "31",
-        time: "8:12:36"
-    },
-    {
-        order_type: 1,
-        volume: "1",
-        price: "20",
-        time: "8:12:36"
-    }
-];
+import { MdOutlineArrowUpward, MdOutlineArrowDownward } from "react-icons/md"
+
 const HistryDiv = (props) => {
     const { trade } = props;
     return (
         <>
             {
-                (trade.order_type === 0) ? <div className="buy-history">
-                    <span style={{color : "green"}}><MdOutlineArrowUpward style={{marginTop : "5px"}}/>{trade.price}</span>
-                    <span>{trade.volume}</span>
-                    <span>{trade.time}</span>
+                (trade.buy_sell === false) ? <div className="buy-history">
+                    <span style={{ color: "green" }}><MdOutlineArrowUpward style={{ marginTop: "5px" }} />{trade.price}</span>
+                    <span>{trade.quantity}</span>
+                    <span>{trade.buyer}-{trade.seller}</span>
+                    <span>{trade.date}</span>
                 </div> : <div className="sell-history">
-                    <span style={{color : "red"}}><MdOutlineArrowDownward/>{trade.price}</span>
-                    <span>{trade.volume}</span>
-                    <span>{trade.time}</span>
+                    <span style={{ color: "red" }}><MdOutlineArrowDownward />{trade.price}</span>
+                    <span>{trade.quantity}</span>
+                    <span>{trade.seller}-{trade.buyer}</span>
+                    <span>{trade.date}</span>
                 </div>
             }
         </>
     );
 }
 const TradeHistory = () => {
+    const [trade, setTrade] = useState();
+
+    const gettradHistory = async () => {
+        const res = await fetch("http://localhost:5000/api/v1/tradehistory ", {
+            method: "GET",
+            headers: { "Content-Type": "application/json" }
+        })
+        const res_data = await res.json();
+        setTrade(res_data.tradehistory);
+    }
+
+    useEffect(() => {
+        gettradHistory();
+    });
+
     return (
         <div className='trade-history-container'>
             <div className='trade-history-heading'>
@@ -102,12 +46,13 @@ const TradeHistory = () => {
                 <div>
                     <span>Price</span>
                     <span>Volume</span>
+                    <span>Transaction</span>
                     <span>Time</span>
                 </div>
             </div>
             <div>
                 {
-                    tradehistoryList.map((eachItem, index) => <HistryDiv key={index} trade={eachItem} />)
+                    trade && trade.map((eachItem, index) => <HistryDiv key={index} trade={eachItem} />).reverse()
                 }
             </div>
         </div>
