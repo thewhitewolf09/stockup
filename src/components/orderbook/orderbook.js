@@ -1,151 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import "./orderbook.css"
 import { AiFillCaretDown } from "react-icons/ai"
 
 
-const orderbookList = [
-    {
-        order_type: 0,
-        volume: "1",
-        price: "12"
-    },
-    {
-        order_type: 1,
-        volume: "4",
-        price: "26"
-    },
-    {
-        order_type: 0,
-        volume: "1",
-        price: "20"
-    },
-    {
-        order_type: 0,
-        volume: "1",
-        price: "18"
-    },
-    {
-        order_type: 1,
-        volume: "1",
-        price: "31"
-    },
-    {
-        order_type: 1,
-        volume: "1",
-        price: "20"
-    },
-    {
-        order_type: 0,
-        volume: "1",
-        price: "12"
-    },
-    {
-        order_type: 1,
-        volume: "4",
-        price: "26"
-    },
-    {
-        order_type: 0,
-        volume: "1",
-        price: "20"
-    },
-    {
-        order_type: 0,
-        volume: "1",
-        price: "18"
-    },
-    {
-        order_type: 1,
-        volume: "1",
-        price: "31"
-    },
-    {
-        order_type: 1,
-        volume: "1",
-        price: "20"
-    },
-    {
-        order_type: 0,
-        volume: "1",
-        price: "12"
-    },
-    {
-        order_type: 1,
-        volume: "4",
-        price: "26"
-    },
-    {
-        order_type: 0,
-        volume: "1",
-        price: "20"
-    },
-    {
-        order_type: 0,
-        volume: "1",
-        price: "18"
-    },
-    {
-        order_type: 1,
-        volume: "1",
-        price: "31"
-    },
-    {
-        order_type: 1,
-        volume: "1",
-        price: "20"
-    },
-    {
-        order_type: 0,
-        volume: "1",
-        price: "12"
-    },
-    {
-        order_type: 1,
-        volume: "4",
-        price: "26"
-    },
-    {
-        order_type: 0,
-        volume: "1",
-        price: "20"
-    },
-    {
-        order_type: 0,
-        volume: "1",
-        price: "18"
-    },
-    {
-        order_type: 1,
-        volume: "1",
-        price: "31"
-    },
-    {
-        order_type: 1,
-        volume: "1",
-        price: "20"
-    }
-];
 
 
-let buyList = [];
-let sellList = [];
 
-orderbookList.map((item) => {
-    if (item.order_type === 0) {
-        buyList.push(item);
-    } else {
-        sellList.push(item);
-    }
-});
+// let buyList = [];
+// let sellList = [];
 
-console.log(buyList)
-console.log(sellList)
+// orderbookList.map((item) => {
+//     if (item.order_type === 0) {
+//         buyList.push(item);
+//     } else {
+//         sellList.push(item);
+//     }
+// });
+
+// console.log(buyList)
+// console.log(sellList)
 
 const BuyOrder = (props) => {
     const { eachItem } = props;
     return (
         <div className='order-book-buy' >
-            <span>{eachItem.volume}</span>
+            <span>{eachItem.quantity}</span>
             <span style={{ color: "green" }}>{eachItem.price}</span>
         </div>
     );
@@ -155,11 +34,29 @@ const SellOrder = (props) => {
     return (
         <div className='order-book-sell'>
             <span style={{ color: "red" }}>{eachItem.price}</span>
-            <span >{eachItem.volume}</span>
+            <span >{eachItem.quantity}</span>
         </div>
     );
 }
 const CurrentMarket = () => {
+
+    const [ordersell, setOrdersell] = useState();
+    const [orderbuy, setOrderbuy] = useState();
+    const getOrderBook = async () => {
+        const res = await fetch("http://localhost:5000/api/v1/orderbook ", {
+            method: "GET",
+            headers: { "Content-Type": "application/json" }
+        })
+        const res_data = await res.json();
+        setOrdersell(res_data.order_sell);
+        setOrderbuy(res_data.order_buy);
+    }
+
+    // console.log(ordersell)
+    // console.log(orderbuy)
+    useEffect(() => {
+        getOrderBook();
+    })
     return (
         <div className='current-market-container'>
             <div className='current-market-heading'>
@@ -174,12 +71,12 @@ const CurrentMarket = () => {
             <div className='order-book-container'>
                 <div>
                     {
-                        buyList.map((item, index) => <BuyOrder key={index} eachItem={item} />)
+                        orderbuy && orderbuy.map((item, index) => <BuyOrder key={index} eachItem={item} />)
                     }
                 </div>
                 <div>
                     {
-                        sellList.map((item, index) => <SellOrder key={index} eachItem={item} />)
+                        ordersell && ordersell.map((item, index) => <SellOrder key={index} eachItem={item} />)
                     }
                 </div>
 
