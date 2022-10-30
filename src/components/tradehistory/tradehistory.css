@@ -1,23 +1,44 @@
-.trade-history-container{
+.trade-history-container {
     width: 39.3%;
     border: 1px solid #E6CBA8;
     margin: 5px;
     border-radius: 5px;
-    height: 70vh;
     background-color: white;
 }
-.trade-history-heading{
+
+.trade-history-heading {
     display: flex;
     flex-direction: column;
-    border-bottom:1px solid #E6CBA8;
+    border-bottom: 1px solid #E6CBA8;
     padding: 5px;
     padding-left: 10px;
     padding-right: 10px;
 }
-.trade-history-heading div{
+
+.trade-history-heading div {
     display: flex;
     justify-content: space-between;
     color: grey;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 12px;
+}
+
+.buy-history {
+    background-color: #76be8591;
+    overflow-y: hidden;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    align-items: center;
+}
+
+.sell-history {
+    background-color: #fd8b83a4;
+    overflow-y: hidden;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    align-items: center;
 }

@@ -21,3 +21,28 @@
     font-weight: bold;
     font-size: 14px;
 }
+.order-book-container{
+    display: flex;
+}
+.order-book-container div{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.order-book-buy{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #9cc4a591;
+}
+.order-book-sell{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #f8b7b2a4;
+}
+.order-book-buy span,.order-book-sell span{
+    font-weight: bold;
+}

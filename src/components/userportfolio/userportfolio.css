@@ -3,7 +3,6 @@
     border: 1px solid #E6CBA8;
     margin: 5px;
     border-radius: 5px;
-    height: 70vh;
     background-color: white;
 }
 .user-portfolio-heading{
@@ -20,4 +19,39 @@
     color: grey;
     font-weight: bold;
     font-size: 14px;
+}
+
+.userportfolio-user-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.userportfolio-user-container span{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.userportfolio-user-container input{
+    font-size: 12px;
+    font-weight: bold;
+    width: 100%;
+    margin: 5px;
+}
+.userportfolio-user-container button{
+    font-size: 12px;
+    font-weight: bold;
+    margin: 5px;
+    border: none;
+    background-color: #E6CBA8;
+    color: white;
+    padding: 3px;
+    width: 60%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.user-portfolio-data{
+    /* overflow-y: scroll; */
 }
