@@ -74,7 +74,7 @@ const UserPortfolio = () => {
                 console.log("User Update Failed!!!")
             }
             else {
-                alert("Order Successfull!!!")
+                alert("User Update Successfull!!!")
                 console.log("User Update Successfull!!!")
             }
         }

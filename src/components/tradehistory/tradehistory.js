@@ -8,6 +8,7 @@ const HistryDiv = (props) => {
     return (
         <>
             {
+                //(trade.buy_sell === true) ? <div className="buy-history">
                 (trade.buy_sell === false) ? <div className="buy-history">
                     <span style={{ color: "green" }}><MdOutlineArrowUpward style={{ marginTop: "5px" }} />{trade.price}</span>
                     <span>{trade.quantity}</span>

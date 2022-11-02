@@ -29,7 +29,8 @@
     align-items: center;
     padding-left: 20px;
     padding-right: 20px;
-    
+    background-color:rgba(193, 190, 190, 0.141);
+    padding: 5px;
 }
 
 .userportfolio-user-container span{
