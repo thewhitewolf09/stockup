@@ -26,7 +26,7 @@ const CurrentMarket = () => {
     const [ordersell, setOrdersell] = useState();
     const [orderbuy, setOrderbuy] = useState();
     const getOrderBook = async () => {
-        const res = await fetch("http://localhost:5000/api/v1/orderbook ", {
+        const res = await fetch("https://stockup-server.herokuapp.com/api/v1/orderbook ", {
             method: "GET",
             headers: { "Content-Type": "application/json" }
         })

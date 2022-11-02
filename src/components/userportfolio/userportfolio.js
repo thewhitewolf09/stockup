@@ -42,7 +42,7 @@ const UserPortfolio = () => {
     const [userdata, setUserdata] = useState();
 
     const getPortFolioData = async () => {
-        const res = await fetch("http://localhost:5000/api/v1/userportfolio", {
+        const res = await fetch("https://stockup-server.herokuapp.com/api/v1/userportfolio", {
             method: "GET",
             headers: { "Content-Type": "application/json" }
         })
@@ -64,7 +64,7 @@ const UserPortfolio = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         if ((user.user_name !== "") && (user.quantity !== "") && (user.portfolio_value !== "")) {
-            const res = await fetch("http://localhost:5000/api/v1/postuserportfolio", {
+            const res = await fetch("https://stockup-server.herokuapp.com/api/v1/postuserportfolio", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(user)

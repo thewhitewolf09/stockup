@@ -28,7 +28,7 @@ const TradeHistory = () => {
     const [trade, setTrade] = useState();
 
     const gettradHistory = async () => {
-        const res = await fetch("http://localhost:5000/api/v1/tradehistory ", {
+        const res = await fetch("https://stockup-server.herokuapp.com/api/v1/tradehistory ", {
             method: "GET",
             headers: { "Content-Type": "application/json" }
         })

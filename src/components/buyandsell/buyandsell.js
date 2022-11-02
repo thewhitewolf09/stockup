@@ -23,7 +23,7 @@ const BuyAndSell = () => {
 
     const handleSubmit = async(event) =>{
         event.preventDefault();
-        const res = await fetch("http://localhost:5000/api/v1/order",{
+        const res = await fetch("https://stockup-server.herokuapp.com/api/v1/order",{
             method: "POST",
             headers: { "Content-Type": "application/json"},
             body : JSON.stringify(order)

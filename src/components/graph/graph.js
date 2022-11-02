@@ -25,7 +25,7 @@ const Graph = () => {
 
 
     const getGraphData = async () => {
-        const res = await fetch("http://localhost:5000/api/v1/marketdata ", {
+        const res = await fetch("https://stockup-server.herokuapp.com/api/v1/marketdata ", {
             method: "GET",
             headers: { "Content-Type": "application/json" }
         })
