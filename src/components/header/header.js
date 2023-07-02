@@ -1,20 +1,31 @@
-import React from "react";
-import {IoIosNotificationsOutline} from "react-icons/io"
-import {RiAccountCircleLine} from "react-icons/ri"
-import "./header.css"
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import './header.scss';
 
-const Header = ()=>{
-    return(
-        <div className="header-container">
-          <div>
-            <h1>StockUp</h1>
-          </div>
-          <div>
-            <RiAccountCircleLine style={{fontSize: "28px",color : "white",marginRight:"10px"}}/>
-            <IoIosNotificationsOutline style={{fontSize: "28px",color : "white"}}/>
-          </div>
+const Header = () => {
+  return (
+    <header className="header">
+      <nav className="navbar">
+        <div className="logo">
+          <NavLink  to="/">TeamTasker</NavLink>
         </div>
-    );
-}
+        <ul className="nav-links">
+          <li>
+            <NavLink to="/dashboard" activeClassName="active">Dashboard</NavLink>
+          </li>
+          <li>
+            <NavLink to="/task-list" activeClassName="active">Task List</NavLink>
+          </li>
+          {/* <li>
+            <NavLink to="/task-details" activeClassName="active">Task Details</NavLink>
+          </li> */}
+          <li>
+            <NavLink to="/user-profile" activeClassName="active">User Profile</NavLink>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  );
+};
 
 export default Header;

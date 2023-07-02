@@ -1,0 +1,319 @@
+.task-details-page {
+  padding: 20px;
+  overflow-x: hidden;
+  min-height: 450px;
+
+  .task-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .task-image {
+      margin-right: 20px;
+
+      img {
+        width: 250px;
+        border-radius: 4px;
+      }
+    }
+
+    .task-details {
+      flex-grow: 1;
+
+      h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: #687cc8;
+      }
+
+      .description {
+        font-size: 16px;
+        color: #666;
+      }
+
+      .task-status {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+
+        .status {
+          font-size: 14px;
+          padding: 5px 10px;
+          border-radius: 4px;
+          color: white;
+          font-weight: bold;
+          text-transform: uppercase;
+          margin-right: 10px;
+        }
+
+        .in{
+          background-color: orange;
+        }
+
+        .completed {
+          background-color: green;
+        }
+      }
+
+      .update-button {
+        background-color: #687cc8;
+        border: none;
+        border-radius: 4px;
+        font-size: 14px;
+        color: white;
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .comments-section {
+    display: flex;
+    //margin-left: 10px;
+
+    div {
+      width: 60%;
+      padding: 20px;
+      h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+        color: #687cc8;
+      }
+
+      .comment-list {
+        list-style: none;
+        padding: 0;
+
+        .comment {
+          display: flex;
+          align-items: flex-start;
+          margin-bottom: 5px;
+          background-color: #f2f1f1;
+          border-radius: 20px;
+
+          .comment-icon {
+            font-size: 24px;
+            height: 14px;
+            width: 14px;
+            color: #687cc8;
+          }
+
+          .comment-details {
+            padding-left: 0%;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            width: 90%;
+
+            .comment-text {
+              font-weight: 500;
+              color: #444;
+            }
+
+            .comment-actions {
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+              padding: 5px;
+              padding-left: 0%;
+              width: 100%;
+
+              .reply-button,
+              .delete-button {
+                background-color: transparent;
+                border: none;
+                color: #333;
+                cursor: pointer;
+                font-size: 14px;
+                display: flex;
+                align-items: center;
+                text-decoration: underline;
+                font-weight: 600;
+                color: #687cc8;
+                outline: none;
+
+                &:hover {
+                  color: #ff5722;
+                }
+              }
+            }
+
+            .reply-form {
+              input {
+                width: 70%;
+                outline: none;
+                margin-right: 10px;
+                font-size: 16px;
+                padding-left: 10px;
+                border: 2px solid #687cc8;
+                border-radius: 10px;
+              }
+
+              button {
+                background-color: #687cc8;
+                border: none;
+                border-radius: 10%;
+                color: white;
+                font-size: 16px;
+                padding: 5px;
+                margin-right: 10px;
+                cursor: pointer;
+              }
+            }
+
+            .reply-list {
+              list-style: none;
+              padding: 0;
+              margin-top: 10px;
+
+              .reply {
+                display: flex;
+                align-items: center;
+                margin-top: 10px;
+                background-color: white;
+                border-radius: 10px;
+                padding: 5px;
+                padding-left: 10px;
+                width: fit-content;
+
+                .reply-icon {
+                  margin-right: 5px;
+                  height: 14px;
+                  width: 14px;
+                  padding: 5px;
+                  font-size: 14px;
+                  color: #687cc8;
+                }
+
+                .reply-text {
+                  margin: 0%;
+                  font-weight: 500;
+                  color: #444;
+                  margin-right: 20px;
+                }
+
+                .delete-button {
+                  background-color: transparent;
+                  border: none;
+                  color: #333;
+                  cursor: pointer;
+                  font-size: 14px;
+                  display: flex;
+                  align-items: center;
+
+                  &:hover {
+                    color: #ff5722;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .comment-form {
+        margin-top: 20px;
+
+        input[type="text"] {
+          padding: 10px;
+          border: 2px solid #687cc8;
+          border-radius: 4px;
+          width: 100%;
+          margin-right: 10px;
+          outline: none;
+        }
+
+        button[type="submit"] {
+          margin-top: 10px;
+          background-color: #687cc8;
+          border: none;
+          border-radius: 4px;
+          color: white;
+          padding: 10px 20px;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .comment-section-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 40%;
+        border-radius: 4px;
+      }
+    }
+  }
+
+  .attachments-section {
+    // background-color: #faf7f7;
+    padding: 20px;
+    h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #687cc8;
+    }
+
+    .attachment-list {
+      .attachment {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        font-weight: 500;
+        background-color: #e1dddd;
+        width: fit-content;
+        padding: 10px;
+        border-radius: 10px;
+
+        .delete-button {
+          background-color: lightcoral;
+          border: none;
+          border-radius: 4px;
+          color: white;
+          padding: 5px 10px;
+          margin-left: 10px;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .file-upload {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+
+      .attach-button {
+        background-color: #687cc8;
+        border: none;
+        border-radius: 10%;
+        color: white;
+        font-size: 20px;
+        padding: 5px;
+        margin-right: 10px;
+        cursor: pointer;
+      }
+
+      input[type="file"] {
+        display: none;
+      }
+
+      p {
+        flex-grow: 1;
+        margin-right: 10px;
+      }
+
+      .add-button {
+        background-color: #687cc8;
+        font-size: 14px;
+        border: none;
+        border-radius: 4px;
+        color: white;
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+    }
+  }
+}

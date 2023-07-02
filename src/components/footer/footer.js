@@ -1,13 +1,12 @@
 import React from 'react';
-import {AiOutlineCopyrightCircle} from "react-icons/ai"
-import "./footer.css"
+import './footer.scss';
 
-const Footer = ()=>{
-  return(
-    <div className='footer-container'>
-        <p><AiOutlineCopyrightCircle/> StockUp. All rights reserved</p>
-    </div>
+const Footer = () => {
+  return (
+    <footer className="footer">
+      <p>&copy; {new Date().getFullYear()} TeamTasker. All rights reserved.</p>
+    </footer>
   );
-}
+};
 
-export default Footer
+export default Footer;

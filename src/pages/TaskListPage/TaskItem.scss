@@ -1,0 +1,65 @@
+.task-item-card {
+    background-color: #fbf9f9;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    border: 3px solid #f5f5f5;
+    cursor: pointer;
+  
+    &:hover {
+        background-color: #e8e8e8;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  
+    &.In {
+      border: 3px solid lightblue;
+    }
+  
+    &.Completed {
+      border: 3px solid lightgreen;
+    }
+  
+    h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #687CC8;
+    }
+  
+    .details {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 20px;
+      width: 100%;
+      color: #687CC8;
+  
+      .icon {
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+        color: #687CC8;
+  
+        svg {
+          width: 20px;
+          height: 20px;
+          margin-right: 5px;
+        }
+      }
+    }
+  
+    p {
+      margin-bottom: 0;
+      color: #687CC8;
+      font-size: 14px;
+      font-weight: 500;
+    }
+  
+    .status {
+      margin-top: auto;
+      font-weight: bold;
+    }
+  }
+  
